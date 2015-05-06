@@ -14,3 +14,13 @@ function stylizedCheckbox(id, onclick) {
         }
     });
 }
+
+function stylizeAllCheckboxes() {
+    $.each($(':input[type=checkbox]'), function(i,v) {
+        var id = $(v).attr('id');
+        var alreadyReplaced = $('#'+ id + 'CheckboxReplacement');
+       if(alreadyReplaced.length != 1) {
+           stylizedCheckbox(id);
+       }
+    });
+}
