@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="http://rawgit.com/rafistrauss/stylized-checkbox/master/stylizedCheckbox/stylizedCheckbox.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 
-
-
     <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="http://rawgit.com/rafistrauss/stylized-checkbox/master/stylizedCheckbox/stylizedCheckbox.js" type="text/javascript"></script>
 
@@ -24,7 +22,7 @@
                 alert('Ran some extra code');
             });
             stylizedCheckbox('myCheckbox', function() {
-               alert('Used awesome checkbox!');
+                alert('Used awesome checkbox!');
             });
             stylizedCheckbox('usageCheckbox');
             $('#usageCheckboxCheckboxReplacement').click();
@@ -32,6 +30,8 @@
             $('header .emptyCheckbox').addClass('error');
 
             animateLogo();
+
+            stylizedRadioButtons('testRadio');
 
         });
 
@@ -85,14 +85,7 @@
             top: -6px;
             width: 20px;
             height: 8px;
-            -webkit-transform: rotate(-426deg);
-            -moz-transform: rotate(-426deg);
-            -o-transform: rotate(-426deg);
             transform: rotate(-426deg);
-
-            -webkit-transition: .5s;
-            -moz-transition: .5s;
-            -o-transition: .5s;
             transition: .5s;
         }
 
@@ -104,6 +97,10 @@
             float: left;
             margin: auto;
             text-align: center;
+        }
+
+        .size1of1 {
+            width: 100%;
         }
 
         .size1of3 {
@@ -122,9 +119,6 @@
         #complexCheckboxCheckboxReplacement.filledCheckbox {
             border-radius: 0;
             border-color: #0f9d58;
-            -webkit-transform: rotate(-426deg);
-            -moz-transform: rotate(-426deg);
-            -o-transform: rotate(-426deg);
             transform: rotate(-426deg);
             width: 20px;
             height: 8px;
@@ -141,7 +135,7 @@
         }
 
         a:hover {
-          text-decoration: underline;
+            text-decoration: underline;
         }
 
         .code, code {
@@ -236,6 +230,15 @@
 
     </div>
 
+    <div class="unit size1of1" >
+
+        Replace radio buttons as well<br /><br />
+
+        <input type="radio" name="testRadio" value="1" checked="checked" /> Option 1 <br />
+        <input type="radio" name="testRadio" value="2" /> Option 2 <br />
+        <input type="radio" name="testRadio" value="3" /> Option 3 <br />
+    </div>
+
 
 
 </div>
@@ -247,13 +250,13 @@
     <code>stylizedCheckbox('id');</code> and you now have a beautiful checkbox that works just like a normal one does.
 
     <br /><br />
-Full example: <br />
+    Full example: <br />
 
 <div class="code">
     <code>
-         <span class="singleTab"> &lt;input type="checkbox" id="exampleCheckbox" /> </span> <br />
+        <span class="singleTab"> &lt;input type="checkbox" id="exampleCheckbox" /> </span> <br />
         <span class="singleTab"> &lt;script> </span> <br />
-         <span class="singleTab"> $(document).ready(function() { </span> <br />
+        <span class="singleTab"> $(document).ready(function() { </span> <br />
         <span class="doubleTab">    stylizedCheckbox('exampleCheckbox'); </span> <br />
         <span class="singleTab">}); </span> <br />
         <span class="singleTab">&lt;/script> </span>
@@ -262,48 +265,48 @@ Full example: <br />
     </code>
 </div>
 
-    <p>
-        <span class="sectionHeading">Additional Styles</span>
-        The Stylized Checkboxes are created by manipulating the border properties of an empty element. At this time, the easiest way to apply additional styling is just overriding the styling of the elements how you wish: <br /> <br />
-        <code>.emptyCheckbox</code> is the class for the initial basic box. The element always retains this class, even when in another state. <br />
-        <code>.filledCheckbox</code> is the class for the checkmark. <br /><br />
-        When you call <code>stylizedCheckbox(id)</code>, the stylized checkbox that is generated is given the id of <code>id + 'CheckboxReplacement'</code>. For example,
-        calling <code>stylizedCheckbox('exampleId')</code> will generate a stylized checkbox with the id <code>exampleIdCheckboxReplacement</code>. This allows you to style specific
-        checkboxes without affecting other checkboxes.
+<p>
+    <span class="sectionHeading">Additional Styles</span>
+    The Stylized Checkboxes are created by manipulating the border properties of an empty element. At this time, the easiest way to apply additional styling is just overriding the styling of the elements how you wish: <br /> <br />
+    <code>.emptyCheckbox</code> is the class for the initial basic box. The element always retains this class, even when in another state. <br />
+    <code>.filledCheckbox</code> is the class for the checkmark. <br /><br />
+    When you call <code>stylizedCheckbox(id)</code>, the stylized checkbox that is generated is given the id of <code>id + 'CheckboxReplacement'</code>. For example,
+    calling <code>stylizedCheckbox('exampleId')</code> will generate a stylized checkbox with the id <code>exampleIdCheckboxReplacement</code>. This allows you to style specific
+    checkboxes without affecting other checkboxes.
 
 
-        <br /><br />
-Example:
+    <br /><br />
+    Example:
 
-        <p class="code">
-            <code>
+<p class="code">
+    <code>
 
-                <span class="singleTab">#usageCheckboxCheckboxReplacement.filledCheckbox {</span> <br />
-                <span class="doubleTab">border-color: rgb(199, 16, 229);</span> <br />
-                <span class="doubleTab">height: 10px;</span> <br />
-                <span class="doubleTab">width: 25px;</span> <br />
-                <span class="singleTab">}</span> <br />
+        <span class="singleTab">#usageCheckboxCheckboxReplacement.filledCheckbox {</span> <br />
+        <span class="doubleTab">border-color: rgb(199, 16, 229);</span> <br />
+        <span class="doubleTab">height: 10px;</span> <br />
+        <span class="doubleTab">width: 25px;</span> <br />
+        <span class="singleTab">}</span> <br />
 
-            </code>
-        </p>
+    </code>
+</p>
 
-        results in this: <input type="checkbox" id="usageCheckbox" />
+results in this: <input type="checkbox" id="usageCheckbox" />
 
-    </p>
+</p>
 
 <p>
     <span class="sectionHeading">Adding Click Functionality</span>
 
     To add additional functionality on click, just pass a function into the <code>stylizedCheckbox</code> function as its second parameter.<br />
     Example:
-    <p class="code">
-        <code>
-            <span class="singleTab">stylizedCheckbox('myCheckbox', function() {</span> <br />
-            <span class="doubleTab">alert('Used awesome checkbox!');</span> <br />
-            <span class="singleTab">});</span> <br />
-        </code>
-    </p>
-    results in: <input type="checkbox" id="myCheckbox" />
+<p class="code">
+    <code>
+        <span class="singleTab">stylizedCheckbox('myCheckbox', function() {</span> <br />
+        <span class="doubleTab">alert('Used awesome checkbox!');</span> <br />
+        <span class="singleTab">});</span> <br />
+    </code>
+</p>
+results in: <input type="checkbox" id="myCheckbox" />
 </p>
 
 </body>
