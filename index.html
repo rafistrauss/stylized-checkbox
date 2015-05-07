@@ -32,6 +32,7 @@
             animateLogo();
 
             stylizedRadioButtons('testRadio');
+            stylizedRadioButtons('testRadio2');
 
         });
 
@@ -101,6 +102,10 @@
 
         .size1of1 {
             width: 100%;
+        }
+
+        .size1of2 {
+            width: 50%;
         }
 
         .size1of3 {
@@ -190,6 +195,28 @@
             margin-top: 15%;
         }
 
+        .replacementRadioButtonHolder {
+            margin-right: 2%;
+        }
+
+        .filledRadioButton[replacementbuttonname=testRadio2] {
+            top: -2px;
+            width: 16px;
+            height: 8px;
+            border: 2px solid #0f9d58;
+            border-top: none;
+            border-right: none;
+            opacity: 1;
+            z-index: 888;
+            -webkit-transform: rotate(-426deg);
+            -moz-transform: rotate(-426deg);
+            -o-transform: rotate(-426deg);
+            transform: rotate(-426deg);
+            background: none;
+            border-radius: 0;
+            transition: .5s;
+        }
+
     </style>
 
 </head>
@@ -234,9 +261,18 @@
 
         Replace radio buttons as well<br /><br />
 
+
+    </div>
+
+    <div class="unit size1of2">
         <input type="radio" name="testRadio" value="1" checked="checked" /> Option 1 <br />
         <input type="radio" name="testRadio" value="2" /> Option 2 <br />
         <input type="radio" name="testRadio" value="3" /> Option 3 <br />
+    </div>
+    <div class="unit size1of2">
+        <input type="radio" name="testRadio2" value="1" checked="checked" /> Special Option 1 <br />
+        <input type="radio" name="testRadio2" value="2" /> Special Option 2 <br />
+        <input type="radio" name="testRadio2" value="3" /> Special Option 3 <br />
     </div>
 
 
