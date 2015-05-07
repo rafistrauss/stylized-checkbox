@@ -1,4 +1,3 @@
-
 function stylizedCheckbox(id, onclick) {
     var actualCheckbox = $('#' + id), replacementCheckboxId = id + 'CheckboxReplacement';
     var replacementCheckboxHolder = $('<div>').addClass('replacementCheckboxHolder');
@@ -6,6 +5,9 @@ function stylizedCheckbox(id, onclick) {
     replacementCheckboxHolder.append(replacementCheckbox);
     //actualCheckbox.hide().parent().prepend(replacementCheckboxHolder);
     replacementCheckboxHolder.append(actualCheckbox.replaceWith(replacementCheckboxHolder).hide());
+    if(actualCheckbox.prop('checked')) {
+        replacementCheckbox.addClass('filledCheckbox');
+    }
     replacementCheckbox.click(function() {
         replacementCheckbox.toggleClass('filledCheckbox');
         actualCheckbox.prop('checked', !actualCheckbox.prop('checked'));
